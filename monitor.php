@@ -377,12 +377,7 @@
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Dipersembahkan &copy; by Farit 
-                        <?php 
-                        $connect = mysqli_connect('localhost', 'root', '', 'iot2');
-                        $sql2 = mysqli_query($connect, "SELECT suhu FROM tabel_iot ORDER BY id DESC");
-                        $data2= mysqli_fetch_array($sql2);
-                        echo $data2['suhu'];
-                        ?>
+                    
                         </span>
                     </div>
                 </div>
