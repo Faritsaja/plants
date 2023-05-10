@@ -20,6 +20,15 @@
 </head>
 
 <body>
+<?php 
+ 
+ session_start();
+  
+ //if (!isset($_SESSION['username'])) {
+ //    header("Location: index.php");
+ //}
+  
+ ?>
     <!-- Preloader -->
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-circle"></div>
@@ -46,13 +55,10 @@
                             <div class="top-header-meta d-flex">
                                 <!-- Language Dropdown -->
                                     <!-- Login -->
-                                    <div class="login">
-                                        <a href="login.php"><i class="fa fa-user" aria-hidden="true"></i> <span>Logiin</span></a>
-                                    </div>
-                                    <div class="singup">
-                                        <a href="php/register.php"><i class="fa fa-user" aria-hidden="true"></i> <span>Singup</span></a>
-                                    </div>
-    
+                                    <div><span> <?php echo "<h5>Selamat Datang, " . $_SESSION['username'] ."! ". " </h5>"; ?></span></div>
+                                <div class="logout">
+                                    <a href="php/logout.php"><i class="fa fa-user" aria-hidden="true"></i> <span>Logut</span></a>
+
 
                             </div>
                         </div>
@@ -91,9 +97,9 @@
                                           
                                     <!-- edit -->
                                             <li><a href="monitor.php">Monitor</a></li>
-                                            <!-- <li><a href="monitor2.php">Control</a></li> -->
-                                            <li><a href="portfolio.html">Reference</a></li>  
-                                            <li><a href="about.html">About</a></li>
+                                            <li><a href="monitor2.php">Control</a></li>
+                                            <li><a href="portfolio.php">Reference</a></li>  
+                                            <li><a href="about.php">About</a></li>
                                         </ul>
         
                                         <!-- Search Icon -->

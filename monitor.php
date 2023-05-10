@@ -53,7 +53,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -65,7 +65,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.php">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Back</span></a>
 
@@ -377,12 +377,7 @@
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Dipersembahkan &copy; by Farit 
-                        <?php 
-                        $connect = mysqli_connect('localhost', 'root', '', 'iot2');
-                        $sql2 = mysqli_query($connect, "SELECT suhu FROM tabel_iot ORDER BY id DESC");
-                        $data2= mysqli_fetch_array($sql2);
-                        echo $data2['suhu'];
-                        ?>
+                    
                         </span>
                     </div>
                 </div>
