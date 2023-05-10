@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+if (isset($_SESSION["loggedin"])  == true) {
+    header("location: open_control.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,16 +27,6 @@
 </head>
 
 <body>
-
-    <?php 
- 
-    session_start();
-     
-    //if (!isset($_SESSION['username'])) {
-    //    header("Location: index.php");
-    //}
-     
-    ?>
     <!-- Preloader -->
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-circle"></div>
@@ -57,11 +53,12 @@
                             <div class="top-header-meta d-flex">
                                 <!-- Language Dropdown -->
                                    <!-- Login -->
-                                  
-                                <div><span> <?php echo "<h5>Selamat Datang, " . $_SESSION['username'] ."! ". " </h5>"; ?></span></div>
-                                <div class="logout">
-                                    <a href="php/logout.php"><i class="fa fa-user" aria-hidden="true"></i> <span>Logut</span></a>
-                              
+                                   <div class="login">
+                                    <a href="login.php"><i class="fa fa-user" aria-hidden="true"></i> <span>Logiin</span></a>
+                                </div>
+                                <div class="singup">
+                                    <a href="php/register.php"><i class="fa fa-user" aria-hidden="true"></i> <span>Singup</span></a>
+                                </div>
 
                             </div>
                         </div>
@@ -100,9 +97,9 @@
                                   
                             <!-- edit -->
                                     <li><a href="monitor.php">Monitor</a></li>
-                                    <li><a href="monitor2.php">Control</a></li>
-                                    <li><a href="portfolio.php">Reference</a></li>  
-                                    <li><a href="about.php">About</a></li>
+                                    <!-- <li><a href="portfolio.html">Control</a></li> -->
+                                    <li><a href="portfolio.html">Reference</a></li>  
+                                    <li><a href="about.html">About</a></li>
                                 </ul>
 
                                 <!-- Search Icon -->
@@ -163,7 +160,7 @@
                             <div class="hero-slides-content text-center">
                                 <h2>Welcome To Our Website</h2>
                                 <p>Website monitoring tanaman hidroponik selada</p>
-                             
+                                
                             </div>
                         </div>
                     </div>
@@ -246,6 +243,8 @@
     </section>
     <!-- ##### Service Area End ##### -->
 
+
+   
     <!-- ##### Testimonial Area Start ##### -->
     <section class="testimonial-area section-padding-100">
         <div class="container">
@@ -335,7 +334,6 @@
     </section>
     <!-- ##### Testimonial Area End ##### -->
 
-
     <!-- ##### Contact Area Start ##### -->
     <section class="contact-area section-padding-100-0">
         <div class="container">
@@ -381,7 +379,7 @@
                 <div class="col-12 col-lg-6">
                     <!-- Google Maps -->
                     <div class="map-area mb-100">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22236.40558254599!2d-118.25292394686001!3d34.057682914027104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2z4Kay4Ka4IOCmj-CmnuCnjeCmnOCnh-CmsuCnh-CmuCwg4KaV4KeN4Kav4Ka-4Kay4Ka_4Kar4KeL4Kaw4KeN4Kao4Ka_4Kav4Ka84Ka-LCDgpq7gpr7gprDgp43gppXgpr_gpqgg4Kav4KeB4KaV4KeN4Kak4Kaw4Ka-4Ka34KeN4Kaf4KeN4Kaw!5e0!3m2!1sbn!2sbd!4v1532328708137" allowfullscreen></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.6919770741156!2d112.79156701462801!3d-7.27584709474833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa10ea2ae883%3A0xbe22c55d60ef09c7!2sPoliteknik%20Elektronika%20Negeri%20Surabaya!5e0!3m2!1sen!2sid!4v1680203863832!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -402,19 +400,18 @@
                             <div class="footer-logo mb-30">
                                 <a href="#"><img src="img/core-img/logo.png" alt=""></a>
                             </div>
-                            <p>follow kami</p>
+                            <p>Lorem ipsum dolor sit samet, consectetur adipiscing elit. India situs atione mantor</p>
                             <div class="social-info">
                                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
                                 <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                
+                                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
 
                     
-
-                
-
                     <!-- Single Footer Widget -->
                     <div class="col-12 col-sm-6 col-lg-3">
                         <div class="single-footer-widget">
@@ -423,9 +420,9 @@
                             </div>
 
                             <div class="contact-information">
-                                <p><span>Address:</span> jl kedunganyar wringinanom Gresik</p>
-                                <p><span>Phone:</span> +62 89513704498</p>
-                                <p><span>Email:</span> faritsajiwo@gmail.com</p>
+                                <p><span>Address:</span> 505 Silk Rd, New York</p>
+                                <p><span>Phone:</span> +1 234 122 122</p>
+                                <p><span>Email:</span> info.deercreative@gmail.com</p>
                             </div>
                         </div>
                     </div>
@@ -433,28 +430,6 @@
             </div>
         </div>
 
-        <!-- Footer Bottom Area -->
-        <div class="footer-bottom-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="border-line"></div>
-                    </div>
-                    <!-- Copywrite Text -->
-                    <div class="col-12 col-md-6">
-                        <div class="copywrite-text">
-                            <p>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- ##### Footer Area End ##### -->
 
     <!-- ##### All Javascript Files ##### -->
     <!-- jQuery-2.2.4 js -->
